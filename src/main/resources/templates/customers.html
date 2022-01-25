@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:insert="fragments/header"></div>
+<h2>List of Northwind Customers</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Customer ID</th>
+        <th>Company Name</th>
+        <th>Contact Name</th>
+        <th>Contact Title</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Post Code</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Fax</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.companyName}"></td>
+        <td th:text="${customer.contactName}"></td>
+        <td th:text="${customer.contactTitle}"></td>
+        <td th:text="${customer.address}"></td>
+        <td th:text="${customer.city}"></td>
+        <td th:text="${customer.region}"></td>
+        <td th:text="${customer.postalCode}"></td>
+        <td th:text="${customer.country}"></td>
+        <td th:text="${customer.phone}"></td>
+        <td th:text="${customer.fax}"></td>
+        <td><a th:href="@{/delete/{id}(id=${customer.id})}">Delete</a></td>
+        <td><a th:href="@{/edit/{id}(id=${customer.id})}">Edit</a></td>
+    </tr>
+</table>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>

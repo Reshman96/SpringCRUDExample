@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer CRUD Application</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:insert="fragments/header"></div>
+<form th:action="@{/login}" method="post">
+    <label>UserName  <input type="text" name="username"/></label>
+    <label>Password  <input type="password" name="password"/></label>
+    <input type="submit" value="Sign in"/>
+</form>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>

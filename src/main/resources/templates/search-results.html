@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div th:insert="fragments/header"></div>
+<h2>Search Results</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Customer ID</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tr th:each="customer : ${searchResults}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.contactName}"></td>
+        <td th:text="${customer.city}"></td>
+        <td><a th:href="@{/delete/{id}(id=${customer.id})}">Delete</a></td>
+        <td><a th:href="@{/edit/{id}(id=${customer.id})}">Edit</a></td>
+    </tr>
+</table>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>

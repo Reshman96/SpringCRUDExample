@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer CRUD Application</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<p><strong>ID:</strong> <span th:text="${customer.id}"></span></p>
+<p><strong>Company Name:</strong> <span th:text="${customer.companyName}"></span></p>
+<p><strong>Contact Name:</strong> <span th:text="${customer.contactName}"></span></p>
+<p><strong>Contact Title:</strong> <span th:text="${customer.contactTitle}"></span></p>
+<p><strong>Address:</strong> <span th:text="${customer.address}"></span></p>
+<p><strong>City:</strong> <span th:text="${customer.city}"></span></p>
+<p><strong>Region:</strong> <span th:text="${customer.region}"></span></p>
+<p><strong>Post Code:</strong> <span th:text="${customer.postalCode}"></span></p>
+<p><strong>Country:</strong> <span th:text="${customer.country}"></span></p>
+<p><strong>Phone No.:</strong> <span th:text="${customer.phone}"></span></p>
+<p><strong>Fax:</strong> <span th:text="${customer.fax}"></span></p>
+<a th:href="@{/}">Back to Main Menu</a><br>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="fragments/header"></div>
+<h2>Select an Operation</h2>
+<a th:href="@{/customers}">View all customers</a>
+<a th:href="@{/add-customer}">Add a customer</a>
+<a th:href="@{/search-customer}">Search for a customer</a>
+<br>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/>
+</form>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>
